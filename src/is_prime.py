@@ -16,5 +16,13 @@ def is_prime(num):
         print(f"{num} is not a prime number")
 
 
+print("Determines if a number is prime or not. Enter 0 to quit!")
 user_input = input("Enter a number: ")
-is_prime(int(user_input))
+
+while int(user_input) != 0:
+    is_prime(int(user_input))
+
+    print("Determines if a number is prime or not. Enter 0 to quit!")
+    user_input = input("Enter a number: ")
+
+print("Program exited. Thank you!")

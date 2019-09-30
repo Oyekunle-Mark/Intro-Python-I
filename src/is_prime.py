@@ -17,21 +17,23 @@ def is_prime(num):
 
 
 def accept_input():
-    print("Determines if a number is prime or not.")
-    print("Enter 0 to quit!")
     user_input = input("Enter a number: ")
 
     try:
-        return int(user_input)
-    except ValueError as e:
-        print("Only integers are allowed: ", e)
+        int_value = int(user_input)
+        return int_value
+    except ValueError:
+        print("Only integers are allowed: ")
+        return 0
 
 
+print("Determines if a number is prime or not.")
+print("Enter 0 to quit!\n")
 user_input = accept_input()
 
 while user_input != 0:
-    is_prime(int(user_input))
+    is_prime(user_input)
 
     user_input = accept_input()
 
-print("Program exited. Thank you!")
+print("Program exited.")

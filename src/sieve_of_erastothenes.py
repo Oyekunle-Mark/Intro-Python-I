@@ -46,7 +46,7 @@ def sieve_of_eratothenes(max):
     Returns:
         list -- list of prime numbers between 2 and max
     """
-    prime_numbers = list(range(2, max))
+    prime_numbers = [num for num in range(2, max)]
 
     for num in range(2, max):
         if num * num > max:

@@ -21,4 +21,32 @@ and does the following:
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+
+def print_calendar():
+    try:
+        user_input = sys.argv
+        year, month, _ = str(date.today()).split("-")
+
+        if len(user_input) == 1:
+            current_calendar = calendar.month(int(year), int(month))
+            print(current_calendar)
+        elif len(user_input) == 2:
+            month = sys.argv[1]
+            current_calendar = calendar.month(int(year), int(month))
+            print(current_calendar)
+        elif len(user_input) == 3:
+            _, month, year = sys.argv
+            current_calendar = calendar.month(int(year), int(month))
+            print(current_calendar)
+        else:
+            print("Invalid input format!")
+            print(
+                "This program prints the current month\'s calendar when no input is given.")
+            print("A single input represents the month of the current and year. Two inputs represents the the month and year to be printed")
+    except ValueError:
+        print("All inputs must be integers.")
+
+
+print_calendar()

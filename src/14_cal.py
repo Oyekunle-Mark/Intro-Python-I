@@ -25,6 +25,8 @@ from datetime import date
 
 
 def print_calendar():
+    """Prints the calendar to stdout
+    """
     try:
         user_input = sys.argv
         year, month, _ = str(date.today()).split("-")

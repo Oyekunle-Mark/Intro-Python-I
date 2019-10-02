@@ -15,17 +15,19 @@ has the following keys:
  - name: a name string for this location
 """
 
+from pprint import pprint as pp
+
 waypoints = [
     {
         "lat": 43,
         "lon": -121,
         "name": "a place"
-    }, 
+    },
     {
         "lat": 41,
         "lon": -123,
         "name": "another place"
-    }, 
+    },
     {
         "lat": 43,
         "lon": -122,
@@ -36,9 +38,31 @@ waypoints = [
 # Add a new waypoint to the list
 # YOUR CODE HERE
 
+waypoints.append({
+    "lat": 25,
+    "lon": -24,
+    "name": "neverland"
+})
+
+pp(waypoints)
+
 # Modify the dictionary with name "a place" such that its longitude
 # value is -130 and change its name to "not a real place"
 # YOUR CODE HERE
 
+for wp in waypoints:
+    if wp["name"] == "a place":
+        wp["lon"] = -130
+        wp["name"] = "not a real place"
+
+pp(waypoints)
+
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
+
+for index, wp in enumerate(waypoints, 1):
+    print(f"<= Waypoint {index} =>")
+
+    print("lat: ", wp["lat"])
+    print("lon: ", wp["lon"])
+    print("name: ", wp["name"])
